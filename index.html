@@ -3,20 +3,183 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Perfil de Personalidade | LifeTrigger</title>
 
     <link rel="stylesheet" href="main.css">
+
 </head>
 <body>
 
     <form id="regForm" name="testForm" action="/obrigadinho.html" netlify>
-
-        <h1>Register:</h1>
         
         <!-- One "tab" for each step in the form: -->
+        <div class="tab radioOption">
+          <h1 class="pergunta">Qual destas áreas da tua vida gostarias de transformar e resignificar ?</h1>
+          <hr>
+          <p>
+            <label>Saúde
+              <input type="radio" name="área-da-vida" value="Saude" oninput="this.className = ''">
+            </label>
+            <label>Família
+              <input type="radio" name="área-da-vida" value="Familia" oninput="this.className = ''">
+            </label>
+            <label>Relacionamentos
+              <input type="radio" name="área-da-vida" value="Relacionamentos" oninput="this.className = ''">
+            </label>
+            <label>Carreira
+              <input type="radio" name="área-da-vida" value="Carreira" oninput="this.className = ''">
+            </label>
+            <label>Finanças
+              <input type="radio" name="área-da-vida" value="Financas" oninput="this.className = ''">
+            </label>
+            <label>Hobbies
+              <input type="radio" name="área-da-vida" value="Hobbies" oninput="this.className = ''">
+            </label>
+          </p>
+          <hr>
+        </div>
+        
+
+        <div class="tab radioOption">
+          <h1 class="pergunta">Quando é altura de recarregar as baterias e procurar o equilíbrio, prefere estar sozinho ou com pessoas?</h1>
+          <hr>
+          <p>
+            <label>Sozinho
+              <input type="radio" name="recarregarAsBaterias" value="sozinho-(E)" oninput="this.className = ''">
+            </label>
+            <label>Com pessoas
+              <input type="radio" name="recarregarAsBaterias" value="comPessoas-(I)" oninput="this.className = ''">
+            </label>
+          </p>
+          <hr>
+        </div>
+        
+        <div class="tab radioOption">
+          <h1 class="pergunta">Se fosse estudar um assunto estaria interessado:</h1>
+          <hr>
+          <p>
+            <label>Apenas nos factos<br>e aplicação no agora
+              <input type="radio" name="estudarUmAssunto" value="agora-(S)" oninput="this.className = ''">
+            </label>
+            <label>Nos conceitos e<br>ideias para o futuro
+              <input type="radio" name="estudarUmAssunto" value="futuro-(N)" oninput="this.className = ''">
+            </label>
+          </p>
+          <hr>
+        </div>
+
+        <div class="tab radioOption">
+          <h1 class="pergunta">Toma decisões baseado:</h1>
+          <hr>
+          <p>
+            <label>Na razão e lógica
+              <input type="radio" name="decisoesBaseadas" value="razao-(T)" oninput="this.className = ''">
+            </label>
+            <label>Intuição e valores pessoais
+              <input type="radio" name="decisoesBaseadas" value="intuicao-(F)" oninput="this.className = ''">
+            </label>
+          </p>
+          <hr>
+        </div>
+
+        <div class="tab radioOption">
+          <h1 class="pergunta">Tem agenda ?</h1>
+          <hr>
+          <p>
+            <label>Sim
+              <input type="radio" name="temAgenda" value="sim" oninput="this.className = ''" id="temAgenda">
+            </label>
+            <label>Não
+              <input type="radio" name="temAgenda" value="não" oninput="this.className = ''" id="naoTemAgenda">
+            </label>
+          </p>
+          
+          <div hidden id="agendaHidden">
+            <hr>
+            <h1 class="pergunta">Usa regularmente ?</h1>
+            <hr>
+            <p>
+              <label>Sim
+                <input type="radio" name="usaRegularmente" value="sim" oninput="this.className = ''">
+              </label>
+              <label>Não
+                <input type="radio" name="usaRegularmente" value="não" oninput="this.className = ''">
+              </label>
+            </p>
+            <hr>
+            <h1 class="pergunta">Gosta de usar ?</h1>
+            <hr>
+            <p>
+              <label>Sim
+                <input type="radio" name="gostaUsar" value="sim" oninput="this.className = ''">
+              </label>
+              <label>Não
+                <input type="radio" name="gostaUsar" value="não" oninput="this.className = ''">
+              </label>
+            </p>
+          </div>
+          
+          <hr>
+        </div>
+
+        <div class="tab">
+          <h1 class="pergunta" id="oQueProcura">O que procura na actividade em questão?</h1>
+          <hr>
+          <p>
+            <textarea name="oQueProcura" placeholder="Alte cena..." cols="40" rows="8"
+              oninput="this.className = '';this.style.height = '';this.style.height = this.scrollHeight + 'px'"
+              style="resize: none;"></textarea>
+          </p>
+          <hr>
+        </div>
+
+        <div class="tab">
+          <h1 class="pergunta">Porque escolhe fazer o que faz na vida?</h1>
+          <hr>
+          <p>
+            <textarea name="porqueFazOQueFazNaVida" placeholder="Porque..." cols="40" rows="8"
+              oninput="this.className = '';this.style.height = '';this.style.height = this.scrollHeight + 'px'"
+              style="resize: none;"></textarea>
+          </p>
+          <hr>
+        </div>
+
+        <div class="tab radioOption">
+          <h1 class="pergunta">Como sabe que fez um bom trabalho?</h1>
+          <hr>
+          <p>
+            <label>Sabe por si próprio
+              <input type="radio" name="Como sabe que fez um bom trabalho?" value="Sabe por si próprio" oninput="this.className = ''">
+            </label>
+            <label>Pergunta sempre
+              <input type="radio" name="Como sabe que fez um bom trabalho?" value="Pergunta sempre" oninput="this.className = ''">
+            </label>
+            <label>Sabe mas mesmo assim pergunta a outros
+              <input type="radio" name="Como sabe que fez um bom trabalho?" value="Sabe, mesmo assim pergunta a outros" oninput="this.className = ''">
+            </label>
+          </p>
+          <hr>
+        </div>
+
+        <div class="tab">
+          <h1 class="pergunta">Como sabe que alguém é bom?</h1>
+          <hr>
+          <p>
+            <textarea name="Como sabe que alguém é bom?" placeholder="Sei...." cols="40" rows="8"
+              oninput="this.className = '';this.style.height = '';this.style.height = this.scrollHeight + 'px'"
+              style="resize: none;"></textarea>
+          </p>
+          <hr>
+        </div>
+
         <div class="tab">Name:
-          <p><input name="firstName" placeholder="First name..." oninput="this.className = ''"></p>
-          <p><input name="lastName" placeholder="Last name..." oninput="this.className = ''"></p>
+          <p><input type="text" name="firstName" placeholder="First name..." oninput="this.className = ''"></p>
+          <p><input type="text" name="lastName" placeholder="Last name..." oninput="this.className = ''"></p>
+        </div>
+
+        <div class="tab">Name:
+          <p><input type="text" name="firstName" placeholder="First name..." oninput="this.className = ''"></p>
+          <p><input type="text" name="lastName" placeholder="Last name..." oninput="this.className = ''"></p>
         </div>
         
         <div class="tab">Contact Info:
@@ -37,13 +200,23 @@
         
         <div style="overflow:auto;">
           <div style="float:right;">
-            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-            <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Seguinte</button>
           </div>
         </div>
+        <span class="radioWarning" style="float:right;">Deves escolher pelo menos uma opção.</span>
         
         <!-- Circles which indicates the steps of the form: -->
         <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>
           <span class="step"></span>

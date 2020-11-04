@@ -12,9 +12,9 @@ function showTab(n) {
     document.getElementById("prevBtn").style.display = "inline";
   }
   if (n == (x.length - 1)) {
-    document.getElementById("nextBtn").innerHTML = "Submit";
+    document.getElementById("nextBtn").innerHTML = "Submeter";
   } else {
-    document.getElementById("nextBtn").innerHTML = "Next";
+    document.getElementById("nextBtn").innerHTML = "Seguinte";
   }
   // ... and run a function that displays the correct step indicator:
   fixStepIndicator(n)
@@ -39,27 +39,65 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
+let oQueProcuraPergunta = document.querySelector("#oQueProcura")
+var areaDaVida
+
+var radioWarning = document.querySelector(".radioWarning")
+
+console.log(document.getElementsByClassName("tab").length)
+
 function validateForm() {
   // This function deals with validation of the form fields
   var x, y, i, valid = true;
   x = document.getElementsByClassName("tab");
   y = x[currentTab].getElementsByTagName("input");
+  z = x[currentTab].getElementsByTagName("textarea")
+  var radios = x[currentTab].querySelectorAll('input[type="radio"]:checked');
+  var checked = radios.length > 0 ? true : false;
+
+  if(currentTab == 0) {
+    areaDaVida = x[0].querySelector('input[type="radio"]:checked').value
+    oQueProcuraPergunta.innerHTML = `O que procura na área em questão? (${areaDaVida})`
+  }
+
   // A loop that checks every input field in the current tab:
   for (i = 0; i < y.length; i++) {
-    // If a field is empty...
-    if (y[i].value == "") {
+    
+    if (y[i].type === 'radio' && !checked) {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      radioWarning.style.display = "block"
+      // and set the current valid status to false:
+      valid = false;
+    } else if (y[i].value == "") {
       // add an "invalid" class to the field:
       y[i].className += " invalid";
       // and set the current valid status to false:
       valid = false;
-    }
+    } 
+    
+  }
+
+  for (i = 0; i < z.length; i++) {
+    
+    if (z[i].value == "") {
+      // add an "invalid" class to the field:
+      z[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    } 
+    
   }
   // If the valid status is true, mark the step as finished and valid:
   if (valid) {
     document.getElementsByClassName("step")[currentTab].className += " finish";
+    radioWarning.style.display = "none"
   }
   return valid; // return the valid status
 }
+
+
+
 
 function fixStepIndicator(n) {
   // This function removes the "active" class of all steps...
@@ -70,3 +108,16 @@ function fixStepIndicator(n) {
   //... and adds the "active" class to the current step:
   x[n].className += " active";
 }
+
+let temAgenda = document.querySelector("#temAgenda")
+let naoTemAgenda = document.querySelector("#naoTemAgenda")
+let agendaHidden = document.querySelector("#agendaHidden")
+
+temAgenda.addEventListener("input", () => {
+  agendaHidden.removeAttribute("hidden")
+})
+
+naoTemAgenda.addEventListener("input", () => {
+  agendaHidden.hidden = true
+})
+
