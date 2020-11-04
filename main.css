@@ -1,36 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
+
+*
+{
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #EFEFEF;
+}
+
 /* Style the form */
 #regForm {
     background-color: #ffffff;
     margin: 100px auto;
-    padding: 40px;
-    width: 70%;
+    padding: 40px 80px;
+    border-radius: 6px;
+    border-top: 4px solid #00AF50;
+    width: 50%;
     min-width: 300px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
   }
   
   /* Style the input fields */
   input {
     padding: 10px;
-    width: 100%;
-    font-size: 17px;
-    font-family: Raleway;
+    /* width: 100%; */
+    font-size: 18px;
     border: 1px solid #aaaaaa;
+  }
+
+  input[type=text] {
+    width: 100%;
   }
   
   /* Mark input boxes that gets an error on validation: */
-  input.invalid {
+  input.invalid,
+  textarea.invalid {
     background-color: #ffdddd;
   }
+
+  #agendaHidden .pergunta {
+    margin-top: 4rem;
+  }
+
+
+  .pergunta {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  
+
+  .radioOption p {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .radioOption label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .radioOption input {
+    margin-top: 0.5rem;  
+  }
+
   
   /* Hide all steps by default: */
   .tab {
     display: none;
+    text-align: center;
   }
   
   /* Make circles that indicate the steps of the form: */
   .step {
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
+    height: 8px;
+    width: 8px;
+    margin: 0 1px;
     background-color: #bbbbbb;
     border: none;
     border-radius: 50%;
@@ -46,4 +97,31 @@
   /* Mark the steps that are finished and valid: */
   .step.finish {
     background-color: #4CAF50;
+  }
+
+  #prevBtn,
+  #nextBtn {
+    padding: 0.5rem;
+    width: 7rem;
+    border: none;
+    background-color: #2C5E43;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  #prevBtn:active,
+  #nextBtn:active {
+    
+  }
+
+  .radioWarning {
+    display: none;
+    margin-top: 5px;
+    font-size: 12px;
+    /* padding: 2px 5px; */
+    color: red;
+    font-weight: 500;
+    /* border: 1px red solid; */
   }
